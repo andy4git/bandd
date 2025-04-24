@@ -6,8 +6,6 @@ on:
 
   push:
     branches:
-    - 'java-util'
-    - 'main'
     - 'app'
 
 jobs:
