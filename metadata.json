@@ -1,7 +1,0 @@
-{
- "apicops":{
-    "latest" : {
-        "windows":"apicops.exe",
-        "linux" : "apicops"
-    }
-}
