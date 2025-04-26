@@ -27,5 +27,5 @@ jobs:
       - name: Pull main into app
         run: |
           git checkout app
-          git pull origin main --no-edit
+          git pull --no-rebase origin main
           git push origin app
