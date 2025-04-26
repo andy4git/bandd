@@ -2,6 +2,9 @@
 name: Auto Pull Main into App Branch
 
 on:
+
+  workflow_dispatch:    
+
   push:
     branches:
       - main  # Trigger only when main is updated
