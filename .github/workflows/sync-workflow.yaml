@@ -1,0 +1,32 @@
+# .github/workflows/auto-pull-main-into-app.yml
+name: Auto Pull Main into App Branch
+
+on:
+
+  workflow_dispatch:    
+
+  push:
+    branches:
+      - main  # Trigger only when main is updated
+
+jobs:
+  sync-branches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: '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'   
+          fetch-depth: 0  # Important: fetch full history so we can merge
+
+      - name: Set up Git user
+        run: |
+          git config user.name "andy4git"
+          git config user.email "andyatgit@gmail.com"
+
+      - name: Pull main into app
+        run: |
+          git checkout app
+          git pull --no-rebase origin main
+          git push origin app
