@@ -3,8 +3,9 @@ name: build application
 on: 
   push:
     branches:
-    - 'app'
-
+    - 'app'    
+    paths-ignore:
+    - '.github/workflows/**'
 jobs:
 
   build-springboot:
