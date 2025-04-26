@@ -3,8 +3,9 @@ name: build application
 on: 
   push:
     branches:
-    - 'app'
-
+    - 'app'    
+    paths-ignore:
+    - '.github/workflows/**'
 jobs:
 
   build-springboot:
@@ -12,12 +13,14 @@ jobs:
     steps:
         - name: Checkout code
           uses: actions/checkout@v4
+          
         - name: Set up JDK 17
           uses: actions/setup-java@v4
           with:
             java-version: '17'
             distribution: 'temurin'
             cache: maven
+            
         - name: Build with maven
           run: |
             ls -la
