@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: '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'   
+          token:  ${{ secrets.GITHUB_TOKEN }} #'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'   
           fetch-depth: 0  # Important: fetch full history so we can merge
 
       - name: Set up Git user
